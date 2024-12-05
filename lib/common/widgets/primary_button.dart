@@ -10,7 +10,7 @@ class PrimaryButton extends StatelessWidget {
       {super.key,
       required this.title,
       required this.onPressed,
-      this.fontSize = 14,
+      this.fontSize = 18,
       this.fontWeight = FontWeight.w600});
 
   @override
@@ -18,16 +18,16 @@ class PrimaryButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: 63,
+        height: 60,
         decoration: BoxDecoration(
             image: const DecorationImage(
                 image: AssetImage('assets/images/primary_btn.png')),
             borderRadius: BorderRadius.circular(30),
             boxShadow: [
               BoxShadow(
-                  color: TColor.secondary.withOpacity(0.35),
+                  color: TColor.secondary.withOpacity(0.25),
                   blurRadius: 10,
-                  offset: const Offset(0, 7))
+                  offset: const Offset(0, 4))
             ]),
         alignment: Alignment.center,
         child: Text(

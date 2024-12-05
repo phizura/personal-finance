@@ -10,7 +10,7 @@ class SecondaryButton extends StatelessWidget {
       {super.key,
       required this.title,
       required this.onPressed,
-      this.fontSize = 14,
+      this.fontSize = 18,
       this.fontWeight = FontWeight.w600});
 
   @override
@@ -18,7 +18,7 @@ class SecondaryButton extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        height: 63,
+        height: 60,
         decoration: BoxDecoration(
           image: const DecorationImage(
               image: AssetImage('assets/images/secondary_btn.png')),

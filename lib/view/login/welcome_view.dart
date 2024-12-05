@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:personal_finance/common/color_extension.dart';
 import 'package:personal_finance/common/widgets/primary_button.dart';
 import 'package:personal_finance/common/widgets/secondary_button.dart';
+import 'package:personal_finance/view/login/sign_in_view.dart';
+import 'package:personal_finance/view/login/social_login_view.dart';
 
 class WelcomeView extends StatefulWidget {
   const WelcomeView({super.key});
@@ -12,12 +13,6 @@ class WelcomeView extends StatefulWidget {
 }
 
 class _WelcomeViewState extends State<WelcomeView> {
-  @override
-  void initState() {
-    super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
-  }
-
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
@@ -44,19 +39,32 @@ class _WelcomeViewState extends State<WelcomeView> {
                     fit: BoxFit.contain,
                   ),
                   const Spacer(),
-                  Text(
-                      'Aplikasi ini terinspirasi dari symu.co dengan bantuan channel youtube @CodeForAny',
+                  Text('Aplikasi ini terinspirasi dari symu.co dan jcd.pl',
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(color: TColor.primaryText, fontSize: 14)),
                   const SizedBox(
                     height: 30,
                   ),
-                  PrimaryButton(title: 'Get started', onPressed: () {}),
+                  PrimaryButton(
+                      title: 'Sign Up',
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SocialLoginView();
+                        }));
+                      }),
                   const SizedBox(
-                    height: 30,
+                    height: 15,
                   ),
-                  SecondaryButton(title: "I have an account", onPressed: () {})
+                  SecondaryButton(
+                      title: "Sign In",
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const SignInView();
+                        }));
+                      })
                 ],
               ),
             ),
