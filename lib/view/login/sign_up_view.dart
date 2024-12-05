@@ -93,9 +93,15 @@ class _SignUpViewState extends State<SignUpView> {
               const SizedBox(
                 height: 15,
               ),
-              Text(
-                  'Use 8 or more characters with a mix of letters, numbers & symbols.',
-                  style: TextStyle(color: TColor.secondaryText, fontSize: 14)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                      'Use 8 or more characters with a mix of letters, \nnumbers & symbols.',
+                      style:
+                          TextStyle(color: TColor.secondaryText, fontSize: 14)),
+                ],
+              ),
               const SizedBox(
                 height: 35,
               ),
